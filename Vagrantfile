@@ -1,8 +1,8 @@
 
 # Custom variables 
 # ------------------------------------------------------
-vm_hostname = "alpine-sandbox.localhost"
-vagrant_plugins = %w(vagrant-hostmanager vagrant-alpine)
+vm_hostname = "alpine-sandbox.local"
+vagrant_plugins = %w(vagrant-hostmanager)
 ip_address = "192.168.59.12"
 box_version = "generic/alpine38"
 custom_files = %w(
@@ -30,9 +30,6 @@ Vagrant.configure("2") do |config|
 
   # Define Box Image
   config.vm.box = box_version
-
-  # Do not update VBguest tools
-  config.vbguest.auto_update = false
 
   # Set private IP interface
   config.vm.network "private_network", ip: ip_address
